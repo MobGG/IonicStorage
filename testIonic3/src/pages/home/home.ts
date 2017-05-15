@@ -14,10 +14,11 @@ export class HomePage {
 
   ionViewDidLoad() { }
 
-  toAbout() {
-    this.storage.save(this.name);
-    console.log(this.name);
-    this.navCtrl.push('AboutPage');
+  toAbout(): void {
+    this.storage.save(this.name).then(() => this.navCtrl.push('AboutPage'));
+    // this.storage.save(this.name);
+    // console.log(this.name);
+    // this.navCtrl.push('AboutPage');
   }
 
 }
